@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="./style/enneastuff.css" type="text/css">
+  <title>EnneaStuff - Newsletter</title>
+</head>
+
+<body>
+  <!--fixed sidebar https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_sidenav_fixed-->
+  <div class="sidenav" id="side-bar">
+    <ul class="list-group">
+      <li class="logo"><img src="./images/enneagram.png" alt="EnneaStuff"></li>
+      <li class="list-group-item"><a href="./index.html">Home</a></li>
+      <li class="list-group-item"><a href="./TheDifferentTypes.html">The Different Types</a></li>
+      <li class="list-group-item"><a href="./UsefulEnnea-Resources.html">Useful Ennea-Resources</a></li>
+      <li class="list-group-item"><a href="./ReadingList.html">Reading List<span class="badge badge-success"
+            id="savedItemsCount"></span></a></li>
+      <li class="list-group-item"><a href="./Newsletter.html">Newsletter</a></li>
+      <li class="list-group-item"><a href="./ContactUs.html">Contact Us</a></li>
+      <li class="list-group-item"><a href="./Comments.html">Comments</a></li>
+    </ul>
+  </div>
+  <!--our main display area-->
+  <div class="main" id="main-area">
+    <!--putting everything in a jumbotron because it looks nice!-->
+    <div class="jumbotron">
+      <!-- let the users know how to show and hide the side bar -->
+      <div id="sidebarInfo">- Double click anywhere to show/hide the side bar -</div>
+      <!-- use the clearfix hack after floats -->
+      <div class="clearfix"></div>
+      <!--our page header container-->
+      <div class="container heading-container">
+        <!--we have two different headers here so that our page is responsive and easily readable across page sizes-->
+        <h1 class="lg-head">Subscribe to our Newsletter</h1>
+        <h1 class="sm-head">Subscribe to<br>our Newsletter</h1>
+        <br>
+        <!--quick description of the enneagram in the header-->
+        <h4>
+          Like what you've seen thus far? Why not subscribe to our newsletter?!
+          We'll send you informative and interesting content as often as you'd like.
+        </h4>
+      </div>
+      <br>
+      <!--a quick form to subscribe to our newsletter-->
+      <div class="container form-container">
+        <form>
+          <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input type="text" class="form-control" id="firstName" placeholder="Enter first name">
+          </div>
+          <div class="form-group">
+            <label for="surname">Surname</label>
+            <input type="text" class="form-control" id="surname" placeholder="Enter surname">
+          </div>
+          <!--select list for gender-->
+          <div class="form-group">
+            <label for="genderSelect">Gender</label>
+            <select class="form-control" id="genderSelect">
+              <option selected disabled>Select your gender</option>
+              <!--placeholder at the top of the select list-->
+              <option>Male</option>
+              <option>Female</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="inputEmail">Email address</label>
+            <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp"
+              placeholder="Enter email">
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+          </div>
+          <!-- our radio form to check how often the subscribers of our newsletter would like to receive our content -->
+          <fieldset class="form-group" style="text-align: left;">
+            <legend class="col-form-label">How often would you like to receive our Newsletter?</legend>
+            <div class="row">
+              <div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="gridRadios" id="daily" value="option1" checked>
+                  <label class="form-check-label" for="daily">
+                    Daily
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="gridRadios" id="weekly" value="option2">
+                  <label class="form-check-label" for="weekly">
+                    Weekly
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="gridRadios" id="monthly" value="option2">
+                  <label class="form-check-label" for="monthly">
+                    Monthly
+                  </label>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!--including jquery and bootsrap 4 javascript bundles-->
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+    integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+  <script src="./style/bootstrap/js/bootstrap.min.js"></script>
+  <script src="./style/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- here we include our main script -->
+  <script src="./scripts/main.js"></script>
+</body>
+
+</html>

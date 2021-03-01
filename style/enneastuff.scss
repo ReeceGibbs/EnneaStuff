@@ -1,0 +1,335 @@
+@import "./bootstrap/scss/bootstrap";
+
+//sidebar width variable
+$sidebar-width : 320px;
+//viewport height
+$view-height : 100vh;
+//background colour
+$bg-colour : rgba(238,238,228, 0.9);
+//hover colour
+$hover-colour : #43d636;
+//text colour
+$text-colour : #212529;
+
+//mixin for when we only want items to display on medium and large displays
+@mixin large-display {
+    @extend .d-none;
+    @extend .d-md-block;
+    @extend .d-lg-block;    
+}
+
+//mixin for when we only want items to display on small and x-small displays
+@mixin small-display {
+    @extend .d-md-none;
+    @extend .d-lg-none;
+}
+
+/*mixin for background images
+take in image url and set background image
+*/
+@mixin set-background-img($url) {
+    background-image: $url;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+//mixin that takes in a value and makes the width and height that same value
+@mixin equate-width-height($size) {
+    width : $size;
+    height : $size;
+}
+
+/*
+fixed sidebar styling so that it doesn't move when we scroll
+https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_sidenav_fixed
+*/
+.sidenav {
+    height: 100%;
+    width: $sidebar-width;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: $bg-colour;
+    overflow-x: hidden;
+    padding-top: 20px;
+    //defining the style of the list of options in our navbar
+    ul.list-group {
+        margin-top: 25%;
+        //defining the style of each item link in our list group
+        li.list-group-item {
+            background-color: transparent;
+            border-top: transparent;
+            border-bottom: transparent;
+            a {
+                text-align: center;
+                text-decoration: none;
+                font-size: 20px;
+                color: $text-colour;
+                display: block;
+                //setting the color when we hover over our links in the sidenav
+                &:hover {
+                    color: $hover-colour;
+                }
+            }
+        }
+        // we set the styling our our enneagram logo
+        li.logo {
+            list-style: none;
+            img {
+                margin: 20px 110px;
+                @include equate-width-height(100px);
+            }
+        }
+    }
+}
+
+//styling our side bar info on how to show and hide the side bar
+#sidebarInfo {
+    @extend .text-muted;
+    float: left;
+    font-size: 10px;
+    font-style: italic;
+}
+
+//making blockquote font slightly smaller
+.blockquote {
+    font-size: 16px;
+}
+//setting the style of our popover widgets
+.popover {
+    opacity: 0.95;
+    border:none;
+}
+
+//main area styling
+.main {
+    margin-left: $sidebar-width; //width of the sidebar
+    padding: 0px 10px;
+    //making the jumbotron full screen height
+    .jumbotron {
+        min-height: $view-height;
+        margin: 0px 5px;
+        border-radius: 0; //getting rid of round corners
+        text-align: center;
+        background-color: $bg-colour;
+        //extending display elements if container and img-container so that images in jumbotron are only displayed if medium and large screen sizes
+        .container.img-container {
+            @include large-display;
+            &#interactive-enneagram {
+            //link to our scalable vector https://commons.wikimedia.org/wiki/File:Enneagram_Symbol_-_Simple.svg
+                @include set-background-img(url(../images/Enneagram_Symbol_-_Simple.svg));
+                @include equate-width-height(320px);
+                .img-row {
+                    height:40px;
+                }
+                .img-grid-block {
+                    opacity: 0; //image grid should be invisible so we can see the background
+                    @extend .col-md-4;
+                    @extend .col-lg-4;
+                    &.split-4 { //we need to divide coloumns into 4ths for the last row
+                        @extend .col-md-3;
+                        @extend .col-lg-3;
+                    }
+                    &.filler-line { //we have an empty line to make space between point rows
+                        @extend .col-md-12;
+                        @extend .col-md-12;
+                    }
+                    //if active point and we are hovering over it, display some information about the point
+                    &.active-point {
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+        //we set styling here for our jumbotron table elements
+        .container.table-container {
+            p.table-cap {
+                text-align: right;
+                font-size: 12px;
+            }
+            //making our table data sit in the middle of the row so it looks neater
+            .table {
+                tr {
+                    td {
+                        vertical-align: middle;
+                        padding: 2px;
+                        &.description {
+                            max-width: 480px;
+                        }
+                    }
+                }
+            }
+        }
+        //align text left in form-groups to make form more aesthetically pleasing
+        .container.form-container {
+            form {
+                .form-group {
+                    text-align: left;
+                }
+            }
+        }
+        //we set the height of our images in the carousel so that the carousel doesn't change size when it loops through the photos
+        .container.carousel-container {
+            max-width: 640px;
+            .carousel-inner {
+                .carousel-item {
+                    img {
+                        height: 380px;
+                    }
+                }
+            }
+        }
+        //making our headings inside our jumbotron responsive
+        .container.heading-container {
+            h1.sm-head { //only display if xs or sm
+                @include small-display;
+            }
+            h1.lg-head { //if medium or large, display inline
+                @include large-display;
+            }
+        }
+        //making our page references look nicer
+        .container.page-reference {
+            text-align: right;
+            font-size: 12px;
+        }
+        .container.body-container {
+            text-align: left;
+        }
+        //setting the style for our ennea-type description container so that we only display relevant information on the page
+        .container.description-container {
+            text-align: left;
+            .ennea-body {
+                display : none;
+                &.current {
+                    display : block;
+                }
+            }
+        }
+    }
+}
+
+//setting our styling for our links table
+.table {
+    //first we extend the existing bootstrap 4 table
+    @extend .table;
+    //give our table rounded corners
+    @extend .rounded;
+    //make our table ever so slightly translucent
+    opacity : 0.9;
+    tr {
+        th {
+            background-color: $hover-colour;
+        }
+    }
+}
+//setting screen scaling props for sidenav
+@media screen and (max-height: 450px) {
+    //padding and link font size change with max screen height
+    .sidenav {
+        padding-top: 15px;
+        a {
+            font-size: 18px;
+        }
+    }
+  }
+
+//setting background image and body styling
+body {
+    /*
+    image location https://www.pexels.com/photo/wood-light-vacation-picnic-60006/
+    set our background image by calling our background setting mixin
+    */
+    @include set-background-img(url(../images/pexels-pixabay-60006.jpg));
+    background-color: $bg-colour; //background colour so page looks nice whilst image is loading
+}
+
+//making form ever so slightly transparent
+form {
+    opacity: 0.9;
+}
+//setting a slight margin to make the radio form look better
+legend.col-form-label {
+    margin-left: 1px;
+}
+//making text align left in a fieldset with formgroup class to make it look a bit cleaner at the end of a form
+fieldset.form-group {
+    text-align: left;
+    margin-left: 15px; //set the left margin to line up with form
+}
+
+//floating our buttons right so they look nicer
+.button-group {
+    float: right;
+    // spacing our inline buttons out a bit
+    ul {
+        .list-group-item {
+            background-color: transparent;
+            border: none;
+            padding: 0px 5px;
+        }
+    }
+}
+// styling delete button
+.btn-delete {
+    float: right;
+    vertical-align: middle;
+}
+
+//styling our badges
+.badge {
+    margin-left: 4px;
+    vertical-align: middle;
+}
+
+// styling our lists in our main content area
+.main-area-list {
+    .list-group-item {
+        opacity: 0.75;
+    }
+}
+// styling our comments list
+#commentsList {
+    // we align our text left so it's nicer and more readible
+    .list-group-item {
+        text-align: left;
+    }
+}
+
+//styling our list group items in our reading list
+#readingList {
+    .list-group-item {
+        &:hover {
+            background-color: $hover-colour;
+        }
+    }
+}
+
+//here we set the image of the like button based on whether or not the user has liked something
+.btn-like {
+    &.liked {
+        @extend .btn-danger;
+    }
+}
+
+// styling our dropdown to add a comment
+.accordion {
+    opacity: 0.8;
+}
+
+//styling our dropdown header
+#commentDropdownHeader {
+    color: $hover-colour;
+}
+
+//styling our review slider to make it match the colour scheme
+.custom-range::-webkit-slider-thumb {
+    background-color: $hover-colour;
+}
+
+//styling our in-focus slider to make it match the colour scheme
+.custom-range:focus::-webkit-slider-thumb {
+    background-color: $hover-colour;
+}
