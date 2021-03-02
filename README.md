@@ -24,9 +24,7 @@
   <h3>Where to find it and how to make it better</h3>
   <h5>Want to check out the live site? <a href="https://reecegibbs.github.io/EnneaStuff/index.html">click here</a></h5>
   <h5>Want to make it better? Follow the steps below</h5>
-  <ul>
-    <li>
-      <h5>First make sure you have git installed</h5>
+  <h5><i>First make sure you have git installed</i></h5>
       <p>
         You can install git for Windows, Mac and Linux at the following <a href="https://git-scm.com/downloads">link</a>.<br>
         If you're a Linux user and prefer the apt package manager you can simply run the following commands:
@@ -38,8 +36,6 @@
         Once you have git installed navigate to your desired working directory and run the command:<br>
         <i>git clone https://github.com/ReeceGibbs/EnneaStuff.git</i>
       </p>
-    </li>
-  </ul>
 </div>
 <br>
 <div id="demo">
