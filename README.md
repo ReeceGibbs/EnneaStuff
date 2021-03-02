@@ -4,7 +4,7 @@
   <h3>Table of Contents</h3>
   <ol>
     <li><a href="#about">What's it all about?</a></li>
-    <li><a href="#contribute">Where to find it and how to contribute</a></li>
+    <li><a href="#contribute">Where to find it and how to make it better</a></li>
     <li><a href="#demo">What it looks like</a></li>
     <li><a href="#credits">Credits</a></li>
   </ol>
@@ -21,22 +21,21 @@
 </div>
 <br>
 <div id="contribute">
-  <h3>Where to find it and how to contribute</h3>
+  <h3>Where to find it and how to make it better</h3>
   <h5>Want to check out the live site? <a href="https://reecegibbs.github.io/EnneaStuff/index.html">click here</a></h5>
-  <br>
-  <h5>Want to contribute? Follow the steps below</h5>
+  <h5>Want to make it better? Follow the steps below</h5>
   <ul>
     <li>
       <h5>First make sure you have git installed</h5>
       <p>
         You can install git for Windows, Mac and Linux at the following <a href="https://git-scm.com/downloads">link</a>.<br>
-        If you're a linux user and prefer the apt package manager you can simply run the following commands:
+        If you're a Linux user and prefer the apt package manager you can simply run the following commands:
           <ul>
             <li><i>sudo apt-get update</i></li>
             <li><i>sudo apt-get install git</i></li>
           </ul>
         <br>
-        Once you have git installed navigate to your desired working directory and run the command<br>
+        Once you have git installed navigate to your desired working directory and run the command:<br>
         <i>git clone https://github.com/ReeceGibbs/EnneaStuff.git</i>
       </p>
     </li>
@@ -45,11 +44,25 @@
 <br>
 <div id="demo">
   <h3>What it looks like</h3>
-  <h4>The current state of the live website</h4>
-  <br>
-  
+  <h4><i>The current state of the live website</i></h4>
+  <h5>Home</h5>
+  <img src="./images/Home-1.png" alt="Home-1">
+  <img src="./images/Home-2.png" alt="Home-2">
+  <h5>The Different Types</h5>
+  <img src="./images/TheDifferentTypes.png" alt="The Different Types">
+  <h5>Useful Ennea-Resources</h5>
+  <img src="./images/UsefulResources.png" alt="Useful Ennea-Resources">
+  <h5>Reading List</h5>
+  <img src="./images/ReadingList.png" alt="Reading List">
+  <h5>Newsletter</h5>
+  <img src="./images/Newsletter.png" alt="Newsletter">
+  <h5>Contact Us</h5>
+  <img src="./images/ContactUs.png" alt="Contact Us">
+  <h5>Comments</h5>
+  <img src="./images/Comments.png" alt="Comments">
 </div>
 <br>
 <div id="credits">
   <h3>Credits</h3>
+  <h5>This website was created by <a href="https://github.com/ReeceGibbs">Reece Gibbs</a></h5>
 </div>
