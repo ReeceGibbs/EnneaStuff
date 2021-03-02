@@ -5,6 +5,7 @@
   <ol>
     <li><a href="#about">What's it all about?</a></li>
     <li><a href="#contribute">Where to find it and how to make it better</a></li>
+    <li><a href="#features">Features and usage</a></li>
     <li><a href="#demo">What it looks like</a></li>
     <li><a href="#credits">Credits</a></li>
   </ol>
@@ -22,7 +23,7 @@
 <br>
 <div id="contribute">
   <h3>Where to find it and how to make it better</h3>
-  <h5>Want to check out the live site? <a href="https://reecegibbs.github.io/EnneaStuff/index.html">click here</a></h5>
+  <h5>Want to check out the live site? <a href="https://reecegibbs.github.io/EnneaStuff">click here</a></h5>
   <h5>Want to make it better? Follow the steps below</h5>
   <h5><i>First make sure you have git installed</i></h5>
       <p>
@@ -36,6 +37,28 @@
         Once you have git installed navigate to your desired working directory and run the command:<br>
         <i>git clone https://github.com/ReeceGibbs/EnneaStuff.git</i>
       </p>
+</div>
+<br>
+<div id="features">
+  <h3>Features and usage</h3>
+  <h5>Features</h5>
+  <ul>
+    <li>Fully responsive and optimized for mobile device use</li>
+    <li>Collapsible navigation bar</li>
+    <li>Interactive Enneagram with popover information</li>
+    <li>Ability to save pages and articles in <i>LocalStorage</i> to read later</li>
+    <li>Read later content displayed in unobstrucive and aesthetically pleasing modal</li>
+    <li>Ability to modify list of local items from the webpage itself in a user-friendly manner</li>
+    <li>Ability to like pages and articles for future reference</li>
+    <li>Comment section for visitors</li>
+  </ul>
+  <h5>Usage</h5>
+  <ul>
+    <li>Site access at <a href="https://reecegibbs.github.io/EnneaStuff">EnneaStuff</a></li>
+    <li>Site useable on mobile and desktop devices</li>
+    <li>Optimised for all modern, javascript-enabled browsers</li>
+    <li>Designed with user-experience in mind</li>
+  </ul>
 </div>
 <br>
 <div id="demo">
